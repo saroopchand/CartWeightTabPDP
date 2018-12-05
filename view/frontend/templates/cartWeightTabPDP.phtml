@@ -1,0 +1,9 @@
+<?php
+$product = $block->getProduct();
+$weightUnit = $block->getWeightUnit();
+$cartWeight = $block->getTotalCartWeight();
+?>
+<div>
+    <div> Total Cart Weight: <?= $cartWeight." ". $weightUnit ?> </div><br/>
+    <div> Cart Weight after this product: <?= $cartWeight + $product->getWeight()." ". $weightUnit ?> </div><br/>
+</div>
