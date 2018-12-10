@@ -1,9 +1,17 @@
-<?php
-$product = $block->getProduct();
-$weightUnit = $block->getWeightUnit();
-$cartWeight = $block->getTotalCartWeight();
-?>
-<div>
-    <div> Total Cart Weight: <?= $cartWeight." ". $weightUnit ?> </div><br/>
-    <div> Cart Weight after this product: <?= $cartWeight + $product->getWeight()." ". $weightUnit ?> </div><br/>
+<div class="progos-cartweight"data-bind="scope: 'section'">
+         Total Cart Weight: <span data-bind="text: cartweight().cartweight"></span>
 </div>
+
+<script type="text/x-magento-init">
+    {
+        "*":{
+            "Magento_Ui/js/core/app":{
+                "components":{
+                    "section":{
+                        "component":"Progos_CartWeightTabPDP/js/section"
+                    }
+                }
+            }
+        }
+    }
+</script>
