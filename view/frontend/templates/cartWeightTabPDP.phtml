@@ -1,0 +1,25 @@
+<?php
+$product = $block->getProduct();
+$weightUnit = $block->getWeightUnit();
+?>
+<div>
+    <div id="total-cart-weight"></div><br/>
+    <div id="afterproductaddtocart"></div><br/>
+</div>
+
+
+<?php
+$ajaxurl = $block->getAjaxUrl();
+?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Progos_CartWeightTabPDP/js/cartweight": {
+                "AjaxUrl": "<?php echo $ajaxurl; ?>",
+                "currentProductWeight": "<?php echo $product->getWeight(); ?>",
+                "weightUnit" : "<?php echo $weightUnit;?>"
+            }
+        }
+    }
+</script>
