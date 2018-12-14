@@ -20,7 +20,7 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $data   = array();
-        $items  = $this->checkoutCart->getQuote()->getAllItems();
+        $items  = $this->checkoutCart->getQuote()->getAllVisibleItems();
         $weight = 0;
         foreach($items as $item) {
             $weight += ($item->getWeight() * $item->getQty()) ;
